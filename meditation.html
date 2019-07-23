@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="./meditation.css">
+    <!-- Icon -->
+    <link rel="icon" href="img/page-icon.png">
+    <title>Meditation</title>
+</head>
+
+<body>
+
+    <div class="header"><a href="index.html"><img src="./img/arrowback.png" alt="back" class="arrow-back"></a></div>
+
+
+
+    <div class="container">
+
+        <div class="time-select">
+            <button data-time="300">5 Minutes</button>
+            <button data-time="600">10 Minutes</button>
+            <button data-time="1200">20 Minutes</button>
+            <button data-time="#" id="last">Choose time</button>
+        </div>
+        <div class="player-container">
+            <audio class="song">
+                <source src="./sounds/beach.mp3">
+            </audio>
+            <img src="./svg/play.svg" alt="play" class="play">
+            <svg class="track-outline" width="453" height="453" viewBox="0 0 453 453" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="226.5" cy="226.5" r="216.5" stroke="black" stroke-width="20" />
+            </svg>
+            <svg class="moving-outline" width="453" height="453" viewBox="0 0 453 453" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="226.5" cy="226.5" r="216.5" stroke="#9932CC" stroke-width="20" />
+            </svg>
+            <h3 class="time-display"> 0:00</h3>
+        </div>
+        <div class="sound-picker">
+            <button data-sound="./sounds/beach.mp3" data-video="./img/beach.png">
+                <img src="./img/beach-icon.png" alt="beach">
+            </button>
+            <button data-sound="./sounds/rain.mp3" data-video="./img/rain.jpg">
+                <img src="./img/rain.png" alt="rain">
+            </button>
+            <button data-sound="./sounds/timeless.mp3" data-video="./img/sunset.jpg">
+                <img src="./img/sunset-icon.png" alt="sunset">
+            </button>
+            <button data-sound="./sounds/timeless.mp3" data-video="./img/nature-background.jpg">
+                <img src="./img/nature-icon.png" alt="sunset">
+            </button>
+        </div>
+
+        <button class="stop">STOP EARLIER!</button>
+
+    </div>
+
+    <audio id="end">
+        <source src="./sounds/gong.mp3">
+    </audio>
+
+
+
+
+    <!-- JavaScript Link -->
+    <script src=" ./app.js"> </script>
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;    
+}
+
+button, a{
+    margin: 10px;
+    font-size: 13px;
+    padding: 10px;
+    color: #fff;
+    background: rgba(0,0,0,0.2);
+    border: 2px #fff solid;
+    outline: none;
+    cursor: pointer;
+    height: 3rem;
+    width: 10rem;
+    transition: all 0.5s ease;
+}
+
+button:hover,
+a:hover{
+    color: #000;
+    background: white;
+}
+
+
+/************ INDEX HTML STYLE **************/
+
+/* Header*/
+
+header{
+    position: absolute;
+    display: flex;
+    height: 15vh;
+    width: 100%;
+    border-bottom: 1px solid #000;
+}
+
+.logo{
+    padding: 10px;
+    width: 9rem;
+    height: 9rem;
+}
+
+.header-buttons{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    margin-right: 4rem;
+}
+
+main{
+    height: 100vh;
+    background: url(img/index-background.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main a{
+    text-align: center;
+}
+
+
+main h2{
+    font-size: 40px;
+    color: #fff;
+}
+
+
+/************ MODAL **************/
+
+.bg-modal{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.modal-content{
+    width: 700px;
+    height: 500px;
+    background: url('./img/modal-background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    border-radius: 4px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.close{
+    position: absolute;
+    top: 0;
+    right: 14px;
+    font-size: 42px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.modal-image{
+    width: 100px;
+}
+
+.modal-content li{
+    padding: 5px;
+    list-style: lower-roman;
+}
+
+.modal-content ul{
+    margin-top: 30px;
+}
+

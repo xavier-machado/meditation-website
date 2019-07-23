@@ -1,0 +1,136 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto Slab', sans-serif;
+    overflow: hidden;
+    background-image: url(img/rain.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;    
+}
+
+.header{
+    position: absolute;
+    padding: 10px;
+}
+
+.arrow-back{
+    height: 40px;
+    width: 40px;
+}
+
+.container{
+    height: 100vh;
+}
+
+
+.time-select{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.player-container{
+    height: 70vh;
+}
+
+.sound-picker{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.play{
+    position: relative;
+    top: 30vh;
+    left: 48.3vw;
+    width: 70px;
+}
+
+
+/* blue svg behind white svg */
+.player-container{
+    position: relative;
+    transition: 0.5s ease;
+}
+
+.player-container svg{
+    position: absolute;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(-90deg);/*to start the animation made on js up*/
+    pointer-events: none;
+}
+
+.time-display{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+    bottom: 10%;
+    color: #fff;
+    font-size: 50px;
+}
+
+
+.time-select button,
+.sound-picker button{
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 11rem;
+    height: 4rem;
+    outline: none;
+    border: 2px solid #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 20px;
+    transition: all 0.5s ease;
+}
+
+.time-select button:hover{
+    color: #000;
+    background: white;
+    border: 2px solid #000;
+}
+
+.sound-picker button{
+    border: none;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    padding: 30px;
+}
+
+.sound-picker button img{
+    height: 100%;
+}
+
+.sound-picker button:nth-child(1){background: lightseagreen;}
+.sound-picker button:nth-child(2){background: lightblue;}
+.sound-picker button:nth-child(3){background: lightpink;}
+.sound-picker button:nth-child(4){background: lightgreen;}
+
+.stop{
+    margin-left: 40.5vw;
+    background: lightsalmon;
+    height: 80px;
+    width: 350px;
+    outline: none;
+    font-weight: bold;
+    color: #fff;
+    font-size: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
+    display: none;
+    cursor: pointer;
+}
