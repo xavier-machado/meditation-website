@@ -18,6 +18,10 @@ a{
     color: #fff;    
 }
 
+.container{
+    height: 100vh;
+}
+
 .header{
     position: absolute;
     padding: 10px;
@@ -27,11 +31,6 @@ a{
     height: 40px;
     width: 40px;
 }
-
-.container{
-    height: 100vh;
-}
-
 
 .time-select{
     display: flex;
@@ -120,9 +119,14 @@ a{
 .sound-picker button:nth-child(3){background: lightpink;}
 .sound-picker button:nth-child(4){background: lightgreen;}
 
+.stop-container{
+    display: flex;
+    justify-content: center;
+}
+
 .stop{
-    margin-left: 40.5vw;
-    background: lightsalmon;
+    background: orangered;
+    border: 2px solid orangered;
     height: 80px;
     width: 350px;
     outline: none;
@@ -134,3 +138,76 @@ a{
     display: none;
     cursor: pointer;
 }
+
+/* Modal */
+
+
+.modal{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    display: none;
+}
+
+.pick-time{
+    width: 500px;
+    height: 200px;
+    margin-top: 30px;
+    background: linear-gradient(#13547a,#80d0c7);
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    border-radius: 4px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.pick-time form{
+    display: grid;
+    grid-gap: 20px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.pick-time input[type=number] {
+    padding: 5px;
+    color: white;
+    border: 1px solid #fff;
+    outline: none;
+    transition: 0.5s ease;
+  }
+
+  .pick-time input[type=number]:focus {
+    background-color: lightblue;
+    border: 1px solid #000;
+  }
+
+.pick-time [type="submit"]{
+    height: 30px;
+    width: 100px;
+    background: lightblue;
+    border: 1px solid #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.pick-time [type="submit"]:hover{
+    background: darkgray;
+    border: 1px solid lightblue;
+    color: black;
+}
+
+

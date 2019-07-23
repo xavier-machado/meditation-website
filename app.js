@@ -77,7 +77,8 @@ if(location.href.includes('index.html')){
         timeSelectBtn.forEach(option =>{
             option.addEventListener('click', function(){
                 if(option.id == 'last'){
-                    let customized = prompt('Choose meditation time (sec)')
+                    let customized = prompt('How many minutes you want?')
+                    customized = customized * 60;
                     if(isNaN(customized)){
                         alert('Achas que isso e um numero?')
                         return;
@@ -96,7 +97,7 @@ if(location.href.includes('index.html')){
         // Create a function specific to stop and play the sounds
         const checkPlaying = (song) => {
             if(duration == 0){
-                alert('You have to pick a time!')
+                alert('please pick a time')
                 return;
             }
             if(song.paused){
