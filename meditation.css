@@ -22,14 +22,10 @@ a{
     height: 100vh;
 }
 
-.header{
-    position: absolute;
-    padding: 10px;
-}
-
 .arrow-back{
-    height: 40px;
-    width: 40px;
+    height: 60px;
+    width: 60px;
+    padding: 10px;
 }
 
 .time-select{
@@ -104,20 +100,25 @@ a{
 
 .sound-picker button{
     border: none;
-    height: 120px;
-    width: 120px;
+    height: 100px;
+    width: 100px;
     border-radius: 50%;
     padding: 30px;
+}
+
+.sound-picker button:hover{
+    transform: rotate(10deg);
 }
 
 .sound-picker button img{
     height: 100%;
 }
 
-.sound-picker button:nth-child(1){background: lightseagreen;}
-.sound-picker button:nth-child(2){background: lightblue;}
-.sound-picker button:nth-child(3){background: lightpink;}
-.sound-picker button:nth-child(4){background: lightgreen;}
+.sound-picker button:nth-child(1){background: linear-gradient(#b3ffab,#12fff7);}
+.sound-picker button:nth-child(2){background: linear-gradient(#43cea2,#185a9d);}
+.sound-picker button:nth-child(3){background: linear-gradient(#0b486b,#f56217);}
+.sound-picker button:nth-child(4){background: linear-gradient(#76b852,#8dc26f);}
+.sound-picker button:nth-child(5){background: linear-gradient(#ff512f,#f09819);}
 
 .stop-container{
     display: flex;
@@ -187,12 +188,12 @@ input[type=number]::-webkit-outer-spin-button {
     border: 1px solid #fff;
     outline: none;
     transition: 0.5s ease;
-  }
+}
 
-  .pick-time input[type=number]:focus {
+.pick-time input[type=number]:focus {
     background-color: lightblue;
     border: 1px solid #000;
-  }
+}
 
 .pick-time [type="submit"]{
     height: 30px;
