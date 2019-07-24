@@ -149,7 +149,13 @@ if(location.href.includes('index.html')){
             timeDisplay.textContent = `${minutes}:${seconds}`
 
             if(currentTime >= duration){
+                song.pause();
+                song.currentTime = 0;
+                end.play();
                 play.src = './svg/play.svg'
+                soundPicker.style.display = 'flex';
+                timeSelect.style.display = 'flex';
+                stop.style.display = 'none';
             }
         }
 
