@@ -37,6 +37,8 @@ a{
 
 .player-container{
     height: 70vh;
+    justify-content: center;
+    align-items: center;
 }
 
 .sound-picker{
@@ -44,11 +46,16 @@ a{
     justify-content: space-evenly;
 }
 
+.play-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .play{
     position: relative;
     top: 30vh;
-    left: 48.3vw;
-    width: 70px;
+    width: 75px;
 }
 
 
@@ -103,7 +110,7 @@ a{
     height: 100px;
     width: 100px;
     border-radius: 50%;
-    padding: 30px;
+    padding: 25px;
 }
 
 .sound-picker button:hover{
@@ -138,12 +145,17 @@ a{
     box-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
     display: none;
     cursor: pointer;
+    transition: all 0.5s ease;
 }
 
-/* Modal */
+.stop:hover{
+    border: 2px solid #fff;
+}
+
+/* Pick time modal */
 
 
-.modal{
+.modal-pick-time{
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
@@ -158,13 +170,14 @@ a{
     width: 500px;
     height: 200px;
     margin-top: 30px;
-    background: linear-gradient(#13547a,#80d0c7);
+    background-image: url('img/header-pick-time.png');
     background-size: cover;
     background-position: center;
     color: #fff;
+    font-weight: bold;
     border-radius: 4px;
     padding: 20px;
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -183,11 +196,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .pick-time input[type=number] {
-    padding: 5px;
-    color: white;
-    border: 1px solid #fff;
+    padding: 10px;
+    border: 1px solid #000;
     outline: none;
     transition: 0.5s ease;
+    font-weight: bold;
 }
 
 .pick-time input[type=number]:focus {
@@ -195,7 +208,7 @@ input[type=number]::-webkit-outer-spin-button {
     border: 1px solid #000;
 }
 
-.pick-time [type="submit"]{
+.pick-time button{
     height: 30px;
     width: 100px;
     background: lightblue;
@@ -205,10 +218,60 @@ input[type=number]::-webkit-outer-spin-button {
     transition: 0.5s ease;
 }
 
-.pick-time [type="submit"]:hover{
-    background: darkgray;
-    border: 1px solid lightblue;
-    color: black;
+/* Alert no time modal */
+
+.no-time{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
 }
 
+.warning-no-time{
+    width: 200px;
+    height: 40px;
+    margin-top: -100px;
+    border-radius: 50px;
+    color: #d8000c;
+    background-color: #ffbaba;
+    border-radius: 4px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: warningtime 15s;
+}
+
+@keyframes warningtime{
+    0%{}
+    10%{margin-top: 5px;}
+    100%{margin-top:-500px;}
+}
+
+
+/* Media queries */
+
+
+
+@media(max-width: 800px){
+
+    .time-select button{
+        width: 5.7rem;
+        height: 3rem;
+        font-size: 15px;
+        transition: all 0.5s ease;
+    }
+
+    .sound-picker button{
+        border: none;
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+        padding: 15px;
+    }
+
+}
 

@@ -31,7 +31,9 @@
             <audio class="song">
                 <source src="./sounds/beach.mp3">
             </audio>
-            <img src="./svg/play.svg" alt="play" class="play">
+            <div class="play-div">
+                <img src="./svg/play.svg" alt="play" class="play">
+            </div>>
             <svg class="track-outline" width="453" height="453" viewBox="0 0 453 453" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <circle cx="226.5" cy="226.5" r="216.5" stroke="black" stroke-width="20" />
@@ -55,13 +57,13 @@
             <button data-sound="./sounds/timeless.mp3" data-video="./img/nature-background.jpg">
                 <img src="./img/nature-icon.png" alt="sunset">
             </button>
-            <button data-sound="./sounds/timeless.mp3" data-video="./img/campfire-background.jpg">
+            <button data-sound="./sounds/campfire.mp3" data-video="./img/campfire-background.jpg">
                 <img src="./img/campfire-icon.png" alt="sunset">
             </button>
         </div>
 
         <div class="stop-container">
-            <button class="stop">STOP EARLIER!</button>
+            <button class="stop">STOP EARLIER</button>
         </div>
 
     </div>
@@ -70,16 +72,21 @@
     <!-- Modal Section -->
 
 
-    <div class="modal">
+    <div class="modal-pick-time">
         <div class="pick-time">
-            <form>
-                <label for="time">Minutes you want to meditate</label>
+                <label for="time">How many minutes would you like to medidate?</label>
                 <input type="number" name="time" id="time">
-                <input type="submit">
-            </form>
+                <button id="send-time">Done</button>
         </div>
     </div>
 
+    <div class="no-time">
+        <div class="warning-no-time">
+            <p>Please, pick a time!</p>
+        </div>
+    </div>
+
+    <!-- End of meditation audio -->
     <audio id="end">
         <source src="./sounds/gong.mp3">
     </audio>

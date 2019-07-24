@@ -31,6 +31,7 @@ button:hover,
 a:hover{
     color: #000;
     background: white;
+    border: 2px solid #000;
 }
 
 
