@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Fonts -->
     <!-- CSS Link -->
-    <link rel="stylesheet" href="./meditation.css">
+    <link rel="stylesheet" href="./styles.css">
     <!-- Icon -->
     <link rel="icon" href="img/page-icon.png">
     <title>Meditation</title>
@@ -15,17 +15,19 @@
 
 <body>
 
-    <a href="index.html"><img src="./img/arrowback.png" alt="back" class="arrow-back"></a>
+
 
 
 
     <div class="container">
 
+        <a href="index.html"><img src="./img/arrowback.png" alt="back" class="arrow-back"></a>
+
         <div class="time-select">
             <button data-time="300">5 Minutes</button>
             <button data-time="600">10 Minutes</button>
             <button data-time="1200">20 Minutes</button>
-            <button data-time="#" id="last">Choose time</button>
+            <button id="last">Choose time</button>
         </div>
         <div class="player-container">
             <audio class="song">
@@ -42,7 +44,7 @@
                 xmlns="http://www.w3.org/2000/svg">
                 <circle cx="226.5" cy="226.5" r="216.5" stroke="#9932CC" stroke-width="20" />
             </svg>
-            <h3 class="time-display"> 0:00</h3>
+            <h3 class="time-display">0:00</h3>
         </div>
         <div class="sound-picker">
             <button data-sound="./sounds/beach.mp3" data-video="./img/beach.png">
@@ -51,10 +53,10 @@
             <button data-sound="./sounds/rain.mp3" data-video="./img/rain.jpg">
                 <img src="./img/rain.png" alt="rain">
             </button>
-            <button data-sound="./sounds/timeless.mp3" data-video="./img/sunset.jpg">
+            <button data-sound="./sounds/sunset.mp3" data-video="./img/sunset.jpg">
                 <img src="./img/sunset-icon.png" alt="sunset">
             </button>
-            <button data-sound="./sounds/timeless.mp3" data-video="./img/nature-background.jpg">
+            <button data-sound="./sounds/sunset.mp3" data-video="./img/nature-background.jpg">
                 <img src="./img/nature-icon.png" alt="sunset">
             </button>
             <button data-sound="./sounds/campfire.mp3" data-video="./img/campfire-background.jpg">
@@ -74,9 +76,9 @@
 
     <div class="modal-pick-time">
         <div class="pick-time">
-                <label for="time">How many minutes would you like to medidate?</label>
-                <input type="number" name="time" id="time">
-                <button id="send-time">Done</button>
+            <label for="time">How many minutes would you like to medidate?</label>
+            <input type="number" name="time" id="time">
+            <button id="send-time">Done</button>
         </div>
     </div>
 

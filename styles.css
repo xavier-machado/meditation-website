@@ -6,10 +6,6 @@
 
 body{
     font-family: 'Roboto Slab', sans-serif;
-    background: url(img/index-background.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 a{
@@ -17,7 +13,33 @@ a{
     color: #fff;    
 }
 
-button, a{
+/*
+ __  .__   __.  _______   __________   ___     __    __  .___________..___  ___.  __      
+|  | |  \ |  | |       \ |   ____\  \ /  /    |  |  |  | |           ||   \/   | |  |     
+|  | |   \|  | |  .--.  ||  |__   \  V  /     |  |__|  | `---|  |----`|  \  /  | |  |     
+|  | |  . `  | |  |  |  ||   __|   >   <      |   __   |     |  |     |  |\/|  | |  |     
+|  | |  |\   | |  '--'  ||  |____ /  .  \     |  |  |  |     |  |     |  |  |  | |  `----.
+|__| |__| \__| |_______/ |_______/__/ \__\    |__|  |__|     |__|     |__|  |__| |_______|*/
+
+
+.wrapper{
+    background: url(img/index-background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Header*/
+
+.wrapper header{
+    position: absolute;
+    display: flex;
+    height: 15vh;
+    width: 100%;
+    border-bottom: 1px solid #000;
+}
+
+.wrapper button, .wrapper a{
     margin: 10px;
     font-size: 13px;
     padding: 10px;
@@ -31,24 +53,11 @@ button, a{
     transition: all 0.5s ease;
 }
 
-button:hover,
-a:hover{
+.wrapper button:hover,
+.wrapper a:hover{
     color: #000;
     background: white;
     border: 2px solid #000;
-}
-
-
-/************ INDEX HTML STYLE **************/
-
-/* Header*/
-
-header{
-    position: absolute;
-    display: flex;
-    height: 15vh;
-    width: 100%;
-    border-bottom: 1px solid #000;
 }
 
 .logo{
@@ -84,7 +93,163 @@ main h2{
 }
 
 
-/************ MODAL **************/
+
+
+/*
+.___  ___.  _______  _______   __  .___________.    ___   .___________. __    ______   .__   __.     __    __  .___________..___  ___.  __      
+|   \/   | |   ____||       \ |  | |           |   /   \  |           ||  |  /  __  \  |  \ |  |    |  |  |  | |           ||   \/   | |  |     
+|  \  /  | |  |__   |  .--.  ||  | `---|  |----`  /  ^  \ `---|  |----`|  | |  |  |  | |   \|  |    |  |__|  | `---|  |----`|  \  /  | |  |     
+|  |\/|  | |   __|  |  |  |  ||  |     |  |      /  /_\  \    |  |     |  | |  |  |  | |  . `  |    |   __   |     |  |     |  |\/|  | |  |     
+|  |  |  | |  |____ |  '--'  ||  |     |  |     /  _____  \   |  |     |  | |  `--'  | |  |\   |    |  |  |  |     |  |     |  |  |  | |  `----.
+|__|  |__| |_______||_______/ |__|     |__|    /__/     \__\  |__|     |__|  \______/  |__| \__|    |__|  |__|     |__|     |__|  |__| |_______|*/
+                                                                                                                                                
+
+.container{
+    height: 100vh;
+    overflow: hidden;
+    background-image: url(img/beach.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.arrow-back{
+    height: 60px;
+    width: 60px;
+    padding: 10px;
+}
+
+.time-select{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.player-container{
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.sound-picker{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.play-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play{
+    position: relative;
+    top: 30vh;
+    width: 75px;
+}
+
+
+/* blue svg behind white svg */
+.player-container{
+    position: relative;
+    transition: 0.5s ease;
+}
+
+.player-container svg{
+    position: absolute;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(-90deg);/*to start the animation made on js up*/
+    pointer-events: none;
+}
+
+.time-display{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+    bottom: 10%;
+    color: #fff;
+    font-size: 50px;
+}
+
+
+.time-select button,
+.sound-picker button{
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 11rem;
+    height: 4rem;
+    outline: none;
+    border: 2px solid #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 20px;
+    transition: all 0.5s ease;
+}
+
+.time-select button:hover{
+    color: #000;
+    background: white;
+    border: 2px solid #000;
+}
+
+.sound-picker button{
+    border: none;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    padding: 25px;
+}
+
+.sound-picker button:hover{
+    transform: rotate(10deg);
+}
+
+.sound-picker button img{
+    height: 100%;
+}
+
+.sound-picker button:nth-child(1){background: linear-gradient(#b3ffab,#12fff7);}
+.sound-picker button:nth-child(2){background: linear-gradient(#43cea2,#185a9d);}
+.sound-picker button:nth-child(3){background: linear-gradient(#0b486b,#f56217);}
+.sound-picker button:nth-child(4){background: linear-gradient(#76b852,#8dc26f);}
+.sound-picker button:nth-child(5){background: linear-gradient(#ff512f,#f09819);}
+
+.stop-container{
+    display: flex;
+    justify-content: center;
+}
+
+.stop{
+    background: orangered;
+    border: 2px solid orangered;
+    height: 80px;
+    width: 350px;
+    outline: none;
+    font-weight: bold;
+    color: #fff;
+    font-size: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
+    display: none;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.stop:hover{
+    border: 2px solid #fff;
+}
+
+/*
+  __  __  ___  ___   _   _    _    
+ |  \/  |/ _ \|   \ /_\ | |  ( )___
+ | |\/| | (_) | |) / _ \| |__|/(_-<
+ |_|  |_|\___/|___/_/ \_\____| /__/*/
+
+ /************ Index.html info modal **************/
 
 .bg-modal{
     width: 100%;
@@ -136,9 +301,137 @@ main h2{
     margin-top: 30px;
 }
 
-/* Media queries */
+ /************ Index.html info modal end **************/
 
-@media(max-width: 700px){
-    
+
+ /************ Meditation.html pick a time modal **************/
+
+.modal-pick-time{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    display: none;
+}
+
+.pick-time{
+    width: 500px;
+    height: 200px;
+    margin-top: 30px;
+    background-image: url('img/header-pick-time.png');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 20px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.pick-time form{
+    display: grid;
+    grid-gap: 20px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.pick-time input[type=number] {
+    padding: 10px;
+    border: 1px solid #000;
+    outline: none;
+    transition: 0.5s ease;
+    font-weight: bold;
+}
+
+.pick-time input[type=number]:focus {
+    background-color: lightblue;
+    border: 1px solid #000;
+}
+
+.pick-time button{
+    height: 30px;
+    width: 100px;
+    background: lightblue;
+    border: 1px solid #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+ /************ Meditation.html pick a time modal **************/
+
+ /************ Meditation.html alert no time modal **************/
+
+.no-time{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.warning-no-time{
+    width: 200px;
+    height: 40px;
+    margin-top: -100px;
+    border-radius: 50px;
+    color: #d8000c;
+    background-color: #ffbaba;
+    border-radius: 4px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: warningtime 15s;
+}
+
+@keyframes warningtime{
+    0%{}
+    10%{margin-top: 5px;}
+    100%{margin-top:-500px;}
+}
+
+ /************ Meditation.html alert no time modal **************/
+
+/*
+ __  __        _ _                          _        
+ |  \/  |___ __| (_)__ _   __ _ _  _ ___ _ _(_)___ ___
+ | |\/| / -_) _` | / _` | / _` | || / -_) '_| / -_|_-<
+ |_|  |_\___\__,_|_\__,_| \__, |\_,_\___|_| |_\___/__/
+                             |_|                      */
+
+
+/* MEDITATION.HTML MEDIA QUERIE */
+
+@media(max-width: 800px){
+
+    .time-select button{
+        width: 5.7rem;
+        height: 3rem;
+        font-size: 15px;
+        transition: all 0.5s ease;
+    }
+
+    .sound-picker button{
+        border: none;
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+        padding: 15px;
+    }
+
 }
 
