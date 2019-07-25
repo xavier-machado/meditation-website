@@ -55,7 +55,7 @@ if(location.href.includes('index.html')){
         sounds.forEach(sound => {
             sound.addEventListener('click', function() {
                 song.src = this.getAttribute('data-sound');
-                document.body.style.backgroundImage = "url("+this.getAttribute('data-video')+")"
+                document.querySelector('.container').style.backgroundImage = "url("+this.getAttribute('data-video')+")"
                 // checkPlaying(song)
                 play.src = './svg/play.svg';
             })
@@ -63,11 +63,7 @@ if(location.href.includes('index.html')){
 
         // Play sound
         play.addEventListener('click', () => {
-            if(timeDisplay.text == '0:00'){
-                alert('Pick a time')
-            }else{
             checkPlaying(song)
-            }
         })
 
 
@@ -132,7 +128,6 @@ if(location.href.includes('index.html')){
         song.ontimeupdate = () => {
             let currentTime = song.currentTime; // will increment all the way till the song finishes
             let elapsed = duration - currentTime;
-            console.log(elapsed)
             //we're using the math.floor because the current time will be float numbers
             let seconds = Math.floor(elapsed % 60); // when it gets to 60 , jump back to 0
             let minutes = Math.floor(elapsed / 60); 
