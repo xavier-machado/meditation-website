@@ -1,4 +1,4 @@
-if(location.href.includes('index.html')){
+if (location.href.includes('index.html')) {
     // INDEX.HTML JS
     // Modal
     const typesModal = document.querySelector('.types-modal')
@@ -15,7 +15,7 @@ if(location.href.includes('index.html')){
     document.getElementById('close-benefits').addEventListener('click', () => benefitsModal.style.display = 'none')
 
 
-}else{
+} else {
 
 
     // MEDITATION.HTML JS
@@ -53,13 +53,30 @@ if(location.href.includes('index.html')){
 
         // Pick different sounds
         sounds.forEach(sound => {
-            sound.addEventListener('click', function() {
+            sound.addEventListener('click', function () {
                 song.src = this.getAttribute('data-sound');
-                document.querySelector('.container').style.backgroundImage = "url("+this.getAttribute('data-video')+")"
-                // checkPlaying(song)
-                play.src = './svg/play.svg';
+                document.querySelector('.container').style.backgroundImage = "url(" + this.getAttribute('data-video') + ")"
             })
         })
+
+        // Create a function specific to stop and play the sounds
+        const checkPlaying = (song) => {
+            if (duration == 0) {
+                timeAlert.style.display = 'flex';
+                setTimeout(() => { timeAlert.style.display = 'none'; }, 4000)
+                return;
+            }
+            if (song.paused) {
+                song.play();
+                play.src = './svg/pause.svg';
+                soundPicker.style.display = 'none';
+                timeSelect.style.display = 'none';
+                stop.style.display = 'block';
+            } else {
+                song.pause();
+                play.src = './svg/play.svg';
+            }
+        };
 
         // Play sound
         play.addEventListener('click', () => {
@@ -67,27 +84,21 @@ if(location.href.includes('index.html')){
         })
 
 
-        // Seconds with double digit
+        // Display seconds with double digits
         const beautifySeconds = (seconds) => {
-            if(seconds < 10){
-                return '0' + seconds
-            }else{
-                return seconds
-            }
+            return seconds < 10 ? '0' + seconds : seconds
         }
 
         //Hide time picker modal when time is picke
-        sendTimePicked.addEventListener('click', function(){
+        sendTimePicked.addEventListener('click', () => {
             timePickedModal.style.display = 'none';
             customized = document.getElementById('time').value;
         })
-        
-        
 
-        // Select sound
-        timeSelectBtn.forEach(option =>{
-            option.addEventListener('click', function(){
-                if(option.id == 'last'){
+        // Select time
+        timeSelectBtn.forEach(option => {
+            option.addEventListener('click', function () {
+                if (option.id == 'last') {
                     timePickedModal.style.display = 'flex';
                     customized = customized * 60;
                     this.setAttribute('data-time', customized)
@@ -100,26 +111,6 @@ if(location.href.includes('index.html')){
             })
         });
 
-
-        // Create a function specific to stop and play the sounds
-        const checkPlaying = (song) => {
-            if(duration == 0){
-                timeAlert.style.display = 'flex';
-                setTimeout(() => { timeAlert.style.display = 'none'; }, 4000)
-                return;
-            }
-            if(song.paused){
-                song.play();
-                play.src = './svg/pause.svg';
-                soundPicker.style.display = 'none';
-                timeSelect.style.display = 'none';
-                stop.style.display = 'block';
-            }else{
-                song.pause();
-                play.src = './svg/play.svg';
-            }
-        };
-
         //We can animate the circle -- ontimeupdate basically runs when the song is running
         //while the song is going on is going to update
         song.ontimeupdate = () => {
@@ -130,7 +121,7 @@ if(location.href.includes('index.html')){
             let elapsed = duration - currentTime;
             //we're using the math.floor because the current time will be float numbers
             let seconds = Math.floor(elapsed % 60); // when it gets to 60 , jump back to 0
-            let minutes = Math.floor(elapsed / 60); 
+            let minutes = Math.floor(elapsed / 60);
             seconds = beautifySeconds(seconds)
 
             // Animate the circle
@@ -141,7 +132,7 @@ if(location.href.includes('index.html')){
             // Animate the text
             timeDisplay.textContent = `${minutes}:${seconds}`
 
-            if(currentTime > duration){
+            if (currentTime > duration) {
                 song.pause();
                 song.currentTime = 0;
                 end.play();
