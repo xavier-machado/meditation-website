@@ -93,7 +93,6 @@ if(location.href.includes('index.html')){
             option.addEventListener('click', function(){
                 if(option.id == 'last'){
                     timePickedModal.style.display = 'flex';
-                    console.log(customized)
                     customized = customized * 60;
                     this.setAttribute('data-time', customized)
                 }
@@ -102,7 +101,6 @@ if(location.href.includes('index.html')){
                 let minutes = Math.floor(duration / 60);
                 seconds = beautifySeconds(seconds)
                 timeDisplay.textContent = `${minutes}:${seconds}`
-                console.log(duration)
             })
         });
 
@@ -148,7 +146,7 @@ if(location.href.includes('index.html')){
             // Animate the text
             timeDisplay.textContent = `${minutes}:${seconds}`
 
-            if(currentTime >= duration){
+            if(currentTime > duration){
                 song.pause();
                 song.currentTime = 0;
                 end.play();
