@@ -41,12 +41,17 @@ if (location.href.includes('index.html')) {
         const outlineLength = outline.getTotalLength(); // a float indicating the total length of the path in user units.
         // Duration
         let duration = 0;
+        // Picking time button to setAttribute
+        const chooseTimeButton = document.getElementById('last');
         // Modal pick time variables
         const timePickedModal = document.querySelector('.modal-pick-time')
         const sendTimePicked = document.getElementById('send-time')
-        var customized = 0;
+        let customized = 0;
         // Modal time alert
         const timeAlert = document.querySelector('.no-time');
+        // Seconds and minutes declration
+        let seconds = 0;
+        let minutes = 0;
 
         outline.style.strokeDasharray = outlineLength; // presentation attribute defining the pattern of dashes and gaps used to paint the outline of the shape
         outline.style.strokeDashoffset = outlineLength; // presentation attribute defining an offset on the rendering of the associated dash array
@@ -89,10 +94,14 @@ if (location.href.includes('index.html')) {
             return seconds < 10 ? '0' + seconds : seconds
         }
 
-        //Hide time picker modal when time is picke
+        //Setting the time that the user choosed
         sendTimePicked.addEventListener('click', () => {
+            let inputValue = document.getElementById('time').value;
+            customized = inputValue * 60;
+            chooseTimeButton.setAttribute('data-time',customized);
+            duration = chooseTimeButton.getAttribute('data-time');
+            formatTime(duration);
             timePickedModal.style.display = 'none';
-            customized = document.getElementById('time').value;
         })
 
         // Select time
@@ -100,22 +109,23 @@ if (location.href.includes('index.html')) {
             option.addEventListener('click', function () {
                 if (option.id == 'last') {
                     timePickedModal.style.display = 'flex';
-                    customized = customized * 60;
-                    this.setAttribute('data-time', customized)
+                }else{
+                    duration = this.getAttribute('data-time');
+                    formatTime(duration)
                 }
-                duration = this.getAttribute('data-time');
-                let seconds = Math.floor(duration % 60);
-                let minutes = Math.floor(duration / 60);
-                seconds = beautifySeconds(seconds)
-                timeDisplay.textContent = `${minutes}:${seconds}`
             })
         });
 
+        //Format and display minutes and seconds
+        function formatTime(duration){
+            seconds = Math.floor(duration % 60);
+            minutes = Math.floor(duration / 60);
+            seconds = beautifySeconds(seconds)
+            timeDisplay.textContent = `${minutes}:${seconds}`
+        }
+
         //We can animate the circle -- ontimeupdate basically runs when the song is running
         //while the song is going on is going to update
-        song.ontimeupdate = () => {
-            console.log(song.currentTime)
-        }
         song.ontimeupdate = () => {
             let currentTime = song.currentTime; // will increment all the way till the song finishes
             let elapsed = duration - currentTime;
