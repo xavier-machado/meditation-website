@@ -46,6 +46,7 @@ if (location.href.includes('index.html')) {
         // Modal pick time variables
         const timePickedModal = document.querySelector('.modal-pick-time')
         const sendTimePicked = document.getElementById('send-time')
+        const inputBox = document.getElementById('time');
         let customized = 0;
         // Modal time alert
         const timeAlert = document.querySelector('.no-time');
@@ -96,7 +97,7 @@ if (location.href.includes('index.html')) {
 
         //Setting the time that the user choosed
         sendTimePicked.addEventListener('click', () => {
-            let inputValue = document.getElementById('time').value;
+            let inputValue = inputBox.value;
             customized = inputValue * 60;
             chooseTimeButton.setAttribute('data-time',customized);
             duration = chooseTimeButton.getAttribute('data-time');
@@ -108,6 +109,7 @@ if (location.href.includes('index.html')) {
         timeSelectBtn.forEach(option => {
             option.addEventListener('click', function () {
                 if (option.id == 'last') {
+                    inputBox.value = '';
                     timePickedModal.style.display = 'flex';
                 }else{
                     duration = this.getAttribute('data-time');
