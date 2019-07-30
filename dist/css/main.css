@@ -1,0 +1,321 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Roboto Slab', sans-serif; }
+
+a {
+  text-decoration: none;
+  color: #fff; }
+
+/*
+ __  .__   __.  _______   __________   ___     __    __  .___________..___  ___.  __      
+|  | |  \ |  | |       \ |   ____\  \ /  /    |  |  |  | |           ||   \/   | |  |     
+|  | |   \|  | |  .--.  ||  |__   \  V  /     |  |__|  | `---|  |----`|  \  /  | |  |     
+|  | |  . `  | |  |  |  ||   __|   >   <      |   __   |     |  |     |  |\/|  | |  |     
+|  | |  |\   | |  '--'  ||  |____ /  .  \     |  |  |  |     |  |     |  |  |  | |  `----.
+|__| |__| \__| |_______/ |_______/__/ \__\    |__|  |__|     |__|     |__|  |__| |_______|*/
+.wrapper {
+  background: url("../img/index-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+  .wrapper header {
+    position: absolute;
+    display: flex;
+    height: 15vh;
+    width: 100%;
+    border-bottom: 1px solid #000; }
+    .wrapper header .logo {
+      padding: 10px;
+      width: 9rem;
+      height: 9rem; }
+    .wrapper header .header-buttons {
+      margin-left: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+  .wrapper button, .wrapper a {
+    height: 2rem;
+    width: 15rem;
+    margin: 10px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.2);
+    border: 2px #fff solid;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease; }
+    .wrapper button:hover, .wrapper a:hover {
+      color: #000;
+      background: #fff;
+      border: 2px #000 solid; }
+
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  main a {
+    text-align: center; }
+  main h2 {
+    font-size: 40px;
+    color: #fff; }
+
+/*
+.___  ___.  _______  _______   __  .___________.    ___   .___________. __    ______   .__   __.     __    __  .___________..___  ___.  __      
+|   \/   | |   ____||       \ |  | |           |   /   \  |           ||  |  /  __  \  |  \ |  |    |  |  |  | |           ||   \/   | |  |     
+|  \  /  | |  |__   |  .--.  ||  | `---|  |----`  /  ^  \ `---|  |----`|  | |  |  |  | |   \|  |    |  |__|  | `---|  |----`|  \  /  | |  |     
+|  |\/|  | |   __|  |  |  |  ||  |     |  |      /  /_\  \    |  |     |  | |  |  |  | |  . `  |    |   __   |     |  |     |  |\/|  | |  |     
+|  |  |  | |  |____ |  '--'  ||  |     |  |     /  _____  \   |  |     |  | |  `--'  | |  |\   |    |  |  |  |     |  |     |  |  |  | |  `----.
+|__|  |__| |_______||_______/ |__|     |__|    /__/     \__\  |__|     |__|  \______/  |__| \__|    |__|  |__|     |__|     |__|  |__| |_______|*/
+.container {
+  height: 100vh;
+  overflow: hidden;
+  background: url("../img/beach.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+  .container .arrow-back {
+    height: 60px;
+    width: 60px;
+    padding: 10px; }
+  .container .time-select {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    margin-top: 20px; }
+    .container .time-select button {
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.6);
+      width: 11rem;
+      height: 4rem;
+      outline: none;
+      border: 2px solid #fff;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 20px;
+      transition: all 0.5s ease; }
+      .container .time-select button:hover {
+        color: #000;
+        background: #fff;
+        border: 2px solid #000; }
+  .container .player-container {
+    height: 70vh;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s ease; }
+    .container .player-container .play-div {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .container .player-container .play-div .play {
+        position: relative;
+        top: 30vh;
+        width: 75px; }
+    .container .player-container svg {
+      position: absolute;
+      height: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-90deg);
+      /*to start the animation made on js up*/
+      pointer-events: none; }
+    .container .player-container .time-display {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      margin-top: 70px;
+      bottom: 10%;
+      color: #fff;
+      font-size: 50px; }
+  .container .sound-picker {
+    display: flex;
+    justify-content: space-evenly; }
+    .container .sound-picker button {
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.6);
+      width: 11rem;
+      height: 4rem;
+      outline: none;
+      border: 2px solid #fff;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 20px;
+      transition: all 0.5s ease;
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      padding: 25px; }
+      .container .sound-picker button:hover {
+        transform: rotate(10deg); }
+      .container .sound-picker button img {
+        height: 100%; }
+      .container .sound-picker button:nth-child(1) {
+        background: linear-gradient(#b3ffab, #12fff7); }
+      .container .sound-picker button:nth-child(2) {
+        background: linear-gradient(#43cea2, #185a9d); }
+      .container .sound-picker button:nth-child(3) {
+        background: linear-gradient(#0b486b, #f56217); }
+      .container .sound-picker button:nth-child(4) {
+        background: linear-gradient(#76b852, #8dc26f); }
+      .container .sound-picker button:nth-child(5) {
+        background: linear-gradient(#ff512f, #f09819); }
+  .container .stop-container {
+    display: flex;
+    justify-content: center; }
+    .container .stop-container .stop {
+      background: orangered;
+      border: 2px solid orangered;
+      height: 80px;
+      width: 350px;
+      outline: none;
+      font-weight: bold;
+      color: #fff;
+      font-size: 30px;
+      border-radius: 5px;
+      box-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
+      display: none;
+      cursor: pointer;
+      transition: all 0.5s ease; }
+      .container .stop-container .stop:hover {
+        border: 2px solid #fff; }
+
+/*
+  __  __  ___  ___   _   _    _    
+ |  \/  |/ _ \|   \ /_\ | |  ( )___
+ | |\/| | (_) | |) / _ \| |__|/(_-<
+ |_|  |_|\___/|___/_/ \_\____| /__/*/
+/************ Index.html info modal **************/
+.bg-modal {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none; }
+  .bg-modal .modal-content {
+    width: 700px;
+    height: 500px;
+    background: url("../img/modal-background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    border-radius: 4px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative; }
+    .bg-modal .modal-content .close {
+      position: absolute;
+      top: 0;
+      right: 14px;
+      font-size: 42px;
+      transform: rotate(45deg);
+      cursor: pointer; }
+    .bg-modal .modal-content .modal-image {
+      width: 100px; }
+    .bg-modal .modal-content li {
+      padding: 5px;
+      list-style: lower-roman; }
+    .bg-modal .modal-content ul {
+      margin-top: 30px; }
+
+/************ Index.html info modal end **************/
+/************ Meditation.html pick a time modal **************/
+.modal-pick-time {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none; }
+  .modal-pick-time .pick-time {
+    width: 500px;
+    height: 200px;
+    background: url("../img/header-pick-time.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #000;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 20px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative; }
+    .modal-pick-time .pick-time form {
+      display: grid;
+      grid-gap: 20px; }
+    .modal-pick-time .pick-time input[type=number] {
+      padding: 10px;
+      border: 1px solid #fff;
+      background: #000;
+      color: #fff;
+      outline: none;
+      font-weight: bold;
+      transition: 0.5 ease; }
+      .modal-pick-time .pick-time input[type=number]::-webkit-inner-spin-button, .modal-pick-time .pick-time input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0; }
+      .modal-pick-time .pick-time input[type=number]:focus {
+        background-color: rgba(0, 0, 0, 0.8); }
+    .modal-pick-time .pick-time button {
+      height: 30px;
+      width: 100px;
+      background-color: rgba(0, 0, 0, 0.9);
+      border: 1px solid #000;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.5s ease; }
+
+/************ Meditation.html pick a time modal **************/
+/************ Meditation.html alert no time modal **************/
+.no-time {
+  top: 0;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none; }
+  .no-time .warning-no-time {
+    width: 250px;
+    height: 30px;
+    padding: 20px;
+    margin-top: -100px;
+    color: #000;
+    background-color: #ffb6c1;
+    border-left: 5px solid red;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: warningtime 15s; }
+
+@keyframes warningtime {
+  0% { }
+  10% {
+    margin-top: 5px; }
+  100% {
+    margin-top: -500px; } }

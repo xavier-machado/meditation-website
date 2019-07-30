@@ -1,0 +1,22 @@
+{
+  "name": "meditationwebsite",
+  "version": "1.0.0",
+  "description": "Meditation website",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xavier-machado/meditation-website.git"
+  },
+  "author": "Hugo Machado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xavier-machado/meditation-website/issues"
+  },
+  "homepage": "https://github.com/xavier-machado/meditation-website#readme",
+  "dependencies": {
+    "node-sass": "^4.12.0"
+  }
+}
