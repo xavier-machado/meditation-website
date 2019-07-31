@@ -82,6 +82,7 @@ if (location.href.includes('index.html')) {
                 soundPicker.style.display = 'none';
                 timeSelect.style.display = 'none';
                 stop.style.display = 'block';
+                var total = duration;
                 countdown = setInterval(() => {
                     duration--;
                     //we're using the math.floor because the current time will be float numbers
@@ -92,7 +93,7 @@ if (location.href.includes('index.html')) {
     
                     // Animate the circle
                     console.log(progress);
-                    progress = outlineLength - (song.currentTime / duration) * outlineLength;
+                    progress = outlineLength * (duration / total);
                     outline.style.strokeDashoffset = progress;
     
                     // Animate the text
@@ -102,7 +103,7 @@ if (location.href.includes('index.html')) {
                         clearInterval(countdown);
                         song.pause();
                         duration = 0;
-                        progress = 0;
+                        outline.style.strokeDashoffset = outlineLength;
                         song.currentTime = 0;
                         // end.play();
                         play.src = './svg/play.svg'
