@@ -147,13 +147,13 @@ main {
 
         button{
             @include meditButtonStyle;
+            border: none;
             height: 100px;
             width: 100px;
             border-radius: 50%;
             padding: 25px;
-
             &:hover{
-                transform: rotate(10deg)
+                transform: rotate(360deg);
             }
 
             img{

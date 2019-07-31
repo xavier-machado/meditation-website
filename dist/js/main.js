@@ -24,7 +24,7 @@ if (location.href.includes('index.html')) {
         const song = document.querySelector('.song'); // <audio> tag
         song.loop = true;
         const play = document.querySelector('.play'); //play button
-        const outline = document.querySelector('.moving-outline circle'); // blue svg, circle tag within
+        const outline = document.querySelector('.moving-outline circle'); // purple svg, circle tag within
         const end = document.getElementById('end'); // audio to end sound
 
         // Sounds
@@ -53,6 +53,10 @@ if (location.href.includes('index.html')) {
         // Seconds and minutes declration
         let seconds = 0;
         let minutes = 0;
+        // Countdown
+        var countdown;
+        // Progress
+        var progress;
 
         outline.style.strokeDasharray = outlineLength; // presentation attribute defining the pattern of dashes and gaps used to paint the outline of the shape
         outline.style.strokeDashoffset = outlineLength; // presentation attribute defining an offset on the rendering of the associated dash array
@@ -78,7 +82,38 @@ if (location.href.includes('index.html')) {
                 soundPicker.style.display = 'none';
                 timeSelect.style.display = 'none';
                 stop.style.display = 'block';
+                countdown = setInterval(() => {
+                    duration--;
+                    //we're using the math.floor because the current time will be float numbers
+                    let seconds = Math.floor(duration % 60); // when it gets to 60 , jump back to 0
+                    let minutes = Math.floor(duration / 60);
+                    seconds = beautifySeconds(seconds);
+    
+    
+                    // Animate the circle
+                    console.log(progress);
+                    progress = outlineLength - (song.currentTime / duration) * outlineLength;
+                    outline.style.strokeDashoffset = progress;
+    
+                    // Animate the text
+                    timeDisplay.textContent = `${minutes}:${seconds}`
+    
+                    if (duration <= 0) {
+                        clearInterval(countdown);
+                        song.pause();
+                        duration = 0;
+                        progress = 0;
+                        song.currentTime = 0;
+                        // end.play();
+                        play.src = './svg/play.svg'
+                        soundPicker.style.display = 'flex';
+                        timeSelect.style.display = 'flex';
+                        stop.style.display = 'none';
+                    }
+    
+                }, 1000);
             } else {
+                clearInterval(countdown);
                 song.pause();
                 play.src = './svg/play.svg';
             }
@@ -99,7 +134,7 @@ if (location.href.includes('index.html')) {
         sendTimePicked.addEventListener('click', () => {
             let inputValue = inputBox.value;
             customized = inputValue * 60;
-            chooseTimeButton.setAttribute('data-time',customized);
+            chooseTimeButton.setAttribute('data-time', customized);
             duration = chooseTimeButton.getAttribute('data-time');
             formatTime(duration);
             timePickedModal.style.display = 'none';
@@ -111,7 +146,7 @@ if (location.href.includes('index.html')) {
                 if (option.id == 'last') {
                     inputBox.value = '';
                     timePickedModal.style.display = 'flex';
-                }else{
+                } else {
                     duration = this.getAttribute('data-time');
                     formatTime(duration)
                 }
@@ -119,45 +154,21 @@ if (location.href.includes('index.html')) {
         });
 
         //Format and display minutes and seconds
-        function formatTime(duration){
+        function formatTime(duration) {
             seconds = Math.floor(duration % 60);
             minutes = Math.floor(duration / 60);
             seconds = beautifySeconds(seconds)
             timeDisplay.textContent = `${minutes}:${seconds}`
         }
 
-        //We can animate the circle -- ontimeupdate basically runs when the song is running
-        //while the song is going on is going to update
-        song.ontimeupdate = () => {
-            let currentTime = song.currentTime; // will increment all the way till the song finishes
-            let elapsed = duration - currentTime;
-            //we're using the math.floor because the current time will be float numbers
-            let seconds = Math.floor(elapsed % 60); // when it gets to 60 , jump back to 0
-            let minutes = Math.floor(elapsed / 60);
-            seconds = beautifySeconds(seconds)
-
-            // Animate the circle
-            let progress = outlineLength - (currentTime / duration) * outlineLength;
-            outline.style.strokeDashoffset = progress;
-
-
-            // Animate the text
-            timeDisplay.textContent = `${minutes}:${seconds}`
-
-            if (currentTime > duration) {
-                song.pause();
-                song.currentTime = 0;
-                end.play();
-                play.src = './svg/play.svg'
-                soundPicker.style.display = 'flex';
-                timeSelect.style.display = 'flex';
-                stop.style.display = 'none';
-            }
-        }
-
         // Stop earlier
         stop.addEventListener('click', () => {
             song.pause();
+            clearInterval(countdown);
+            timeDisplay.textContent = '0:00'
+            outline.style.strokeDashoffset = outlineLength;
+            duration = 0;
+            progress = 0;
             song.currentTime = 0;
             play.src = './svg/play.svg'
             soundPicker.style.display = 'flex';

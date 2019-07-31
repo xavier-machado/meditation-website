@@ -137,12 +137,13 @@ main {
       border-radius: 5px;
       font-size: 20px;
       transition: all 0.5s ease;
+      border: none;
       height: 100px;
       width: 100px;
       border-radius: 50%;
       padding: 25px; }
       .container .sound-picker button:hover {
-        transform: rotate(10deg); }
+        transform: rotate(360deg); }
       .container .sound-picker button img {
         height: 100%; }
       .container .sound-picker button:nth-child(1) {
