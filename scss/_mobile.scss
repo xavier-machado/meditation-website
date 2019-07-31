@@ -1,0 +1,165 @@
+// Widescreens
+@include mediaXl {
+
+}
+
+// Deskpots & Laptops
+@include mediaLg {
+
+}
+
+// Tablets & Small Laptops
+@include mediaMd {
+    //Index.html
+    .time-select button{
+        width: 5.7rem;
+        height: 3rem;
+        font-size: 15px;
+        transition: all 0.5s ease;
+    }
+
+    .sound-picker button{
+        height: 300px;
+        width: 300px;
+        padding: 15px;
+    }
+}
+
+// Smartphones
+@include mediaSm {
+    .wrapper {
+
+        .header-button {
+            margin-right: 1rem;
+
+            .logo{
+                width: 5rem;
+                height: 5rem;
+            }
+        }
+
+        a,button {
+            font-size: 9px;
+            height: 1.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        a{
+            width: 7rem;
+        }
+
+        button{
+            width: 5rem;
+        }
+
+        main {
+            h2{
+                font-size: 15px;
+            }
+        }
+    }
+    // Index.html modal
+        
+    .modal-content{
+        width: 300px;
+        height: 300px;
+        font-size: 10px;
+        line-height: 0.7;
+
+        .close{
+            position: absolute;
+            top: 0;
+            right: 14px;
+            font-size: 30px;
+            transform: rotate(45deg);
+            cursor: pointer;
+        }
+
+                
+        .modal-image{
+            width: 50px;
+        }
+
+        li{
+            padding: 5px;
+        }
+
+        ul{
+            margin-top: 30px;
+        }
+    }
+
+    // Meditation.html
+
+    .time-select{
+        button{
+            width: 5rem;
+            height: 2.4rem;
+            font-size: 12px;
+            transition: all 0.5s ease;
+        }
+    }
+
+    .player-container{
+        height: 60vh;
+        justify-content: center;
+        align-items: center;
+        
+        .play{
+            position: relative;
+            top: 25vh;
+            width: 50px;
+        }
+
+        .time-display{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            bottom: 10%;
+            color: #fff;
+            font-size: 35px;
+        }
+    }
+
+    .stop{
+        height: 50px;
+        width: 250px;
+        font-size: 20px;
+    }
+
+    .arrow-back{
+        height: 50px;
+        width: 50px;
+        padding: 10px;
+    }
+
+    .sound-picker{
+        button{
+            height: 10px;
+            width: 10px;
+            padding: 10px;
+        }
+    }
+
+        /* Pick time modal */
+
+    .pick-time{
+        width: 300px;
+        height: 150px;
+        margin-top: 30px;
+        font-size: 13px;
+
+        input[type=number]{
+            padding: 5px;
+        }
+    }
+
+        /* Warning no time modal */
+    .warning-no-time{
+        width: 150px;
+        height: 30px;
+        font-size: 12px;
+    }
+}
