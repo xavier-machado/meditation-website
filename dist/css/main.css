@@ -1,3 +1,27 @@
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg); }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg); }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg); }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg); }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg); }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg); }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg); }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg); }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg); }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg); }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg); } }
+
 * {
   margin: 0;
   padding: 0;
@@ -22,9 +46,11 @@ a {
     width: 100%;
     border-bottom: 1px solid #000; }
     .wrapper header .logo {
+      margin-top: 10px;
+      margin-left: 30px;
       padding: 10px;
-      width: 9rem;
-      height: 9rem; }
+      width: 7rem;
+      height: 7rem; }
     .wrapper header .header-buttons {
       margin-left: auto;
       display: flex;
@@ -60,7 +86,8 @@ main {
     text-align: center; }
   main h2 {
     font-size: 40px;
-    color: #fff; }
+    color: #fff;
+    text-align: center; }
 
 .container {
   height: 100vh;
@@ -143,7 +170,7 @@ main {
       border-radius: 50%;
       padding: 25px; }
       .container .sound-picker button:hover {
-        transform: rotate(360deg); }
+        animation: shake 0.5s; }
       .container .sound-picker button img {
         height: 100%; }
       .container .sound-picker button:nth-child(1) {
@@ -298,94 +325,63 @@ main {
     margin-top: -500px; } }
 
 @media screen and (max-width: 768px) {
-  .time-select button {
-    width: 5.7rem;
-    height: 3rem;
-    font-size: 15px;
-    transition: all 0.5s ease; }
-  .sound-picker button {
-    height: 300px;
-    width: 300px;
-    padding: 15px; } }
+  .wrapper header .logo {
+    width: 5rem;
+    height: 5rem;
+    margin-left: 5px; }
+  .wrapper button, .wrapper a {
+    height: 2rem;
+    width: 5rem; }
+  .wrapper a {
+    width: 8rem; }
+  main h2 {
+    font-size: 20px; } }
 
 @media screen and (max-width: 500px) {
-  .wrapper .header-button {
-    margin-right: 1rem; }
-    .wrapper .header-button .logo {
-      width: 5rem;
-      height: 5rem; }
-  .wrapper a, .wrapper button {
-    font-size: 9px;
-    height: 1.8rem;
-    display: flex;
-    align-items: center; }
-  .wrapper a {
-    width: 7rem; }
-  .wrapper button {
-    width: 5rem; }
-  .wrapper main h2 {
-    font-size: 15px; }
-  .modal-content {
-    width: 300px;
-    height: 300px;
-    font-size: 10px;
-    line-height: 0.7; }
-    .modal-content .close {
-      position: absolute;
-      top: 0;
-      right: 14px;
-      font-size: 30px;
-      transform: rotate(45deg);
-      cursor: pointer; }
-    .modal-content .modal-image {
+  .bg-modal .modal-content {
+    width: 350px;
+    height: 300px; }
+    .bg-modal .modal-content .close {
+      font-size: 26px; }
+    .bg-modal .modal-content .modal-image {
       width: 50px; }
-    .modal-content li {
-      padding: 5px; }
-    .modal-content ul {
+    .bg-modal .modal-content li {
+      padding: 5px;
+      font-size: 12px;
+      line-height: 0.7;
+      list-style: lower-roman; }
+    .bg-modal .modal-content ul {
       margin-top: 30px; }
-  .time-select button {
-    width: 5rem;
-    height: 2.4rem;
-    font-size: 12px;
-    transition: all 0.5s ease; }
-  .player-container {
-    height: 60vh;
-    justify-content: center;
-    align-items: center; }
-    .player-container .play {
-      position: relative;
-      top: 25vh;
-      width: 50px; }
-    .player-container .time-display {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-      bottom: 10%;
-      color: #fff;
-      font-size: 35px; }
-  .stop {
-    height: 50px;
-    width: 250px;
-    font-size: 20px; }
-  .arrow-back {
+  .container .arrow-back {
     height: 50px;
     width: 50px;
     padding: 10px; }
-  .sound-picker button {
-    height: 10px;
-    width: 10px;
+  .container .time-select {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    margin-top: 20px; }
+    .container .time-select button {
+      width: 8rem;
+      height: 2rem;
+      margin: 5px;
+      font-size: 10px; }
+  .container .player-container {
+    height: 50vh;
+    position: relative; }
+    .container .player-container .play-div .play {
+      position: relative;
+      top: 20vh;
+      width: 50px; }
+    .container .player-container .time-display {
+      margin-top: 0;
+      font-size: 35px; }
+  .container .sound-picker button {
+    height: 60px;
+    width: 60px;
     padding: 10px; }
-  /* Pick time modal */
-  .pick-time {
-    width: 300px;
-    height: 150px;
-    margin-top: 30px;
-    font-size: 13px; }
-    .pick-time input[type=number] {
-      padding: 5px; }
-  /* Warning no time modal */
-  .warning-no-time {
-    width: 150px;
-    height: 30px;
-    font-size: 12px; } }
+  .container .stop-container .stop {
+    margin-top: -20px;
+    height: 50px;
+    width: 230px;
+    font-size: 20px; } }
