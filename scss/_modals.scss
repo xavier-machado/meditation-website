@@ -12,7 +12,7 @@
     .modal-content {
         width: 700px;
         height: 500px;
-        @include backgroundConfig('../img/modal-background.jpg');
+        @include backgroundConfig('https://i.postimg.cc/XNphCqyJ/modal-background.jpg');
         color: #fff;
         border-radius: 4px;
         padding: 20px;
@@ -59,7 +59,7 @@
     .pick-time{
         width: 500px;
         height: 200px;
-        @include backgroundConfig('../img/header-pick-time.png');
+        @include backgroundConfig('https://i.postimg.cc/fypjsHR4/header-pick-time.png');
         color: #000;
         font-weight: bold;
         border-radius: 4px;

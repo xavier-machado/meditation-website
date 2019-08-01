@@ -17,8 +17,7 @@ a{
 
 // Index.html
 .wrapper {
-    @include backgroundConfig('../img/index-background.jpg');
-
+    @include backgroundConfig('https://i.postimg.cc/mrFgt8jZ/index-background.jpg');
     header {
         position: absolute;
         display: flex;
@@ -82,19 +81,19 @@ main {
 .container {
     height: 100vh;
     overflow: hidden;
-    @include backgroundConfig('../img/beach.png');
+    @include backgroundConfig('https://i.postimg.cc/sgTVnb6g/beach.png');
 
     .arrow-back {
-        height: 60px;
-        width: 60px;
+        height: 80px;
+        width: 80px;
         padding: 10px;
+        transform: rotate(180deg);
     }
 
     .time-select{
         display: flex;
         justify-content: space-evenly;
         padding: 10px;
-        margin-top: 20px;
 
         button {
             @include meditButtonStyle;
@@ -159,8 +158,10 @@ main {
                 animation: shake 0.5s;
             }
 
-            img{
+            img,svg{
                 height: 100%;
+                display: flex;
+                justify-content: center;
             }
 
             &:nth-child(1){background: linear-gradient(#b3ffab,#12fff7);}

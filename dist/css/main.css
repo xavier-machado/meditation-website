@@ -35,7 +35,7 @@ a {
   color: #fff; }
 
 .wrapper {
-  background: url("../img/index-background.jpg");
+  background: url("https://i.postimg.cc/mrFgt8jZ/index-background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; }
@@ -92,19 +92,19 @@ main {
 .container {
   height: 100vh;
   overflow: hidden;
-  background: url("../img/beach.png");
+  background: url("https://i.postimg.cc/sgTVnb6g/beach.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; }
   .container .arrow-back {
-    height: 60px;
-    width: 60px;
-    padding: 10px; }
+    height: 80px;
+    width: 80px;
+    padding: 10px;
+    transform: rotate(180deg); }
   .container .time-select {
     display: flex;
     justify-content: space-evenly;
-    padding: 10px;
-    margin-top: 20px; }
+    padding: 10px; }
     .container .time-select button {
       color: #fff;
       background-color: rgba(0, 0, 0, 0.6);
@@ -171,8 +171,10 @@ main {
       padding: 25px; }
       .container .sound-picker button:hover {
         animation: shake 0.5s; }
-      .container .sound-picker button img {
-        height: 100%; }
+      .container .sound-picker button img, .container .sound-picker button svg {
+        height: 100%;
+        display: flex;
+        justify-content: center; }
       .container .sound-picker button:nth-child(1) {
         background: linear-gradient(#b3ffab, #12fff7); }
       .container .sound-picker button:nth-child(2) {
@@ -216,7 +218,7 @@ main {
   .bg-modal .modal-content {
     width: 700px;
     height: 500px;
-    background: url("../img/modal-background.jpg");
+    background: url("https://i.postimg.cc/XNphCqyJ/modal-background.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -256,7 +258,7 @@ main {
   .modal-pick-time .pick-time {
     width: 500px;
     height: 200px;
-    background: url("../img/header-pick-time.png");
+    background: url("https://i.postimg.cc/fypjsHR4/header-pick-time.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
