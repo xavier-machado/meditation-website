@@ -97,13 +97,17 @@ main {
   background-position: center;
   background-repeat: no-repeat; }
   .container .arrow-back {
+    position: absolute;
     height: 80px;
     width: 80px;
     padding: 10px;
     transform: rotate(180deg); }
   .container .time-select {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     justify-content: space-evenly;
+    margin-top: 20px;
+    margin-left: 200px;
     padding: 10px; }
     .container .time-select button {
       color: #fff;
@@ -359,10 +363,10 @@ main {
     width: 50px;
     padding: 10px; }
   .container .time-select {
-    display: flex;
-    justify-content: space-evenly;
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 20px;
     padding: 10px;
-    margin-top: 20px; }
+    margin-top: 40px; }
     .container .time-select button {
       width: 8rem;
       height: 2rem;

@@ -73,10 +73,10 @@
         }
     
         .time-select{
-            display: flex;
-            justify-content: space-evenly;
+            grid-template-columns: repeat(2, 1fr);
+            margin-left: 20px;
             padding: 10px;
-            margin-top: 20px;
+            margin-top: 40px;
     
             button {
                 width: 8rem;
