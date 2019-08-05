@@ -100,7 +100,8 @@
     
             .time-display{
                 margin-top: 0;
-                font-size: 35px
+                font-size: 25px;
+                margin-top: -20px;
             }
         }
     
@@ -120,5 +121,33 @@
                 font-size: 20px;
             }
         }
+
+    }
+
+    // Modal 
+    .no-time{
+        .warning-no-time{
+            width: 150px;
+            padding: 15px;
+            font-size: 10px;
+        }
+     }
+
+     .modal-pick-time{
+        .pick-time{
+            width: 350px;
+            height: 200px;
+    
+            input[type=number]{
+                padding: 10px;
+                border: 1px solid #fff;
+                background: #000;
+                color: #fff;
+                outline: none;
+                font-weight: bold;
+                transition: 0.5 ease;
+    
+            }
+        }   
     }
 }

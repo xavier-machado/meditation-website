@@ -19,7 +19,7 @@
         @include flexCentering;
         flex-direction: column;
         position: relative;
-
+        animation: zoomIn .5s forwards;
         .close{
            position: absolute;
            top: 0;
