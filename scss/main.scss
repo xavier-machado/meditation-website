@@ -19,7 +19,7 @@ a{
 
 .bg-image{
     position: absolute; /* because it's going to go over the showcase section */
-    @include backgroundConfig('https://i.postimg.cc/k58jzc00/clouds-dawn-daylight-620337.jpg');
+    @include backgroundConfig('../img/background.jpg');
     /* The image doesn't appear until we size it */
     width: 100%;
     height: 100vh; /* Making sure is the same as the parent */
@@ -51,14 +51,12 @@ a{
     }
 
     button, a{
-        height: 3rem;
-        width: 14rem;
         margin: 10px;
         color: #fff;
         font-size: 20px;
+        font-family: 'Blinker', sans-serif;
         font-weight: bold;
         background: rgba(0,0,0,0.7);
-        border-radius: 10px;
         border: 2px #fff solid;
         outline: none;
         cursor: pointer;
@@ -72,9 +70,21 @@ a{
         }
     }
 
+    button {
+        margin: 20rem;
+        height: 4rem;
+        width: 12rem;
+        font-size: 25px;
+    }
+
+    img {
+        width: 100px;
+    }
+
     a{
         width: 15rem;
         height: 3rem;
+        border-radius: 10px;
     }
 }
 
@@ -88,10 +98,12 @@ main {
     }
 
     h2 {
+        width: 70%;
+        text-shadow: -3px 3px 5px rgba(12,4,11,0.96);
         font-size: 50px;
+        font-family: 'Blinker', sans-serif;
         padding: 20px;
         border-radius: 20px;
-        background: rgba(#000, 0.5);
         color: #fff;
         text-align: center;
     }

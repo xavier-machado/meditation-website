@@ -28,6 +28,12 @@
   100% {
     transform: scale(1); } }
 
+@keyframes zoomOut {
+  0% {
+    transform: scale(1); }
+  100% {
+    transform: scale(0); } }
+
 * {
   margin: 0;
   padding: 0;
@@ -43,7 +49,7 @@ a {
 .bg-image {
   position: absolute;
   /* because it's going to go over the showcase section */
-  background: url("https://i.postimg.cc/k58jzc00/clouds-dawn-daylight-620337.jpg");
+  background: url("../img/background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -72,14 +78,12 @@ a {
     align-items: center; }
 
 .wrapper button, .wrapper a {
-  height: 3rem;
-  width: 14rem;
   margin: 10px;
   color: #fff;
   font-size: 20px;
+  font-family: 'Blinker', sans-serif;
   font-weight: bold;
   background: rgba(0, 0, 0, 0.7);
-  border-radius: 10px;
   border: 2px #fff solid;
   outline: none;
   cursor: pointer;
@@ -92,9 +96,19 @@ a {
     background: #fff;
     border: 2px #000 solid; }
 
+.wrapper button {
+  margin: 20rem;
+  height: 4rem;
+  width: 12rem;
+  font-size: 25px; }
+
+.wrapper img {
+  width: 100px; }
+
 .wrapper a {
   width: 15rem;
-  height: 3rem; }
+  height: 3rem;
+  border-radius: 10px; }
 
 main {
   height: 100vh;
@@ -105,10 +119,12 @@ main {
   main a {
     text-align: center; }
   main h2 {
+    width: 70%;
+    text-shadow: -3px 3px 5px rgba(12, 4, 11, 0.96);
     font-size: 50px;
+    font-family: 'Blinker', sans-serif;
     padding: 20px;
     border-radius: 20px;
-    background: rgba(0, 0, 0, 0.5);
     color: #fff;
     text-align: center; }
 
@@ -253,7 +269,8 @@ main {
     align-items: center;
     flex-direction: column;
     position: relative;
-    animation: zoomIn .5s forwards; }
+    animation: zoomIn .5s forwards;
+    transition: top 0.4s, opacity 0.4s; }
     .bg-modal .modal-content .close {
       position: absolute;
       top: 0;
@@ -312,7 +329,7 @@ main {
       .modal-pick-time .pick-time input[type=number]:focus {
         background-color: rgba(0, 0, 0, 0.8); }
     .modal-pick-time .pick-time button {
-      height: 30px;
+      height: 40px;
       width: 100px;
       background-color: rgba(0, 0, 0, 0.9);
       border: 1px solid #000;

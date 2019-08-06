@@ -20,6 +20,7 @@
         flex-direction: column;
         position: relative;
         animation: zoomIn .5s forwards;
+        transition: top 0.4s, opacity 0.4s;
         .close{
            position: absolute;
            top: 0;
@@ -96,7 +97,7 @@
         }
 
         button{
-            height: 30px;
+            height: 40px;
             width: 100px;
             background-color: rgba(#000,0.9);
             border: 1px solid #000;
