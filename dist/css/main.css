@@ -1,43 +1,14 @@
-@keyframes shake {
-  0% {
-    transform: translate(1px, 1px) rotate(0deg); }
-  10% {
-    transform: translate(-1px, -2px) rotate(-1deg); }
-  20% {
-    transform: translate(-3px, 0px) rotate(1deg); }
-  30% {
-    transform: translate(3px, 2px) rotate(0deg); }
-  40% {
-    transform: translate(1px, -1px) rotate(1deg); }
-  50% {
-    transform: translate(-1px, 2px) rotate(-1deg); }
-  60% {
-    transform: translate(-3px, 1px) rotate(0deg); }
-  70% {
-    transform: translate(3px, 1px) rotate(-1deg); }
-  80% {
-    transform: translate(-1px, -1px) rotate(1deg); }
-  90% {
-    transform: translate(1px, 2px) rotate(0deg); }
-  100% {
-    transform: translate(1px, -2px) rotate(-1deg); } }
-
 @keyframes zoomIn {
   0% {
     transform: scale(0); }
   100% {
     transform: scale(1); } }
 
-@keyframes zoomOut {
-  0% {
-    transform: scale(1); }
-  100% {
-    transform: scale(0); } }
-
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  overflow: hidden; }
 
 body {
   font-family: 'Roboto Slab', sans-serif; }
@@ -48,7 +19,6 @@ a {
 
 .bg-image {
   position: absolute;
-  /* because it's going to go over the showcase section */
   background: url("../img/background.jpg");
   background-size: cover;
   background-position: center;
@@ -56,7 +26,6 @@ a {
   /* The image doesn't appear until we size it */
   width: 100%;
   height: 100vh;
-  /* Making sure is the same as the parent */
   z-index: -1;
   opacity: 0.9; }
 
@@ -72,7 +41,7 @@ a {
     width: 7rem;
     height: 7rem; }
   .wrapper header .header-buttons {
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center; }
@@ -99,7 +68,7 @@ a {
 .wrapper button {
   margin: 20rem;
   height: 4rem;
-  width: 12rem;
+  width: 15rem;
   font-size: 25px; }
 
 .wrapper img {
@@ -163,20 +132,24 @@ main {
         color: #000;
         background: #fff;
         border: 2px solid #000; }
+  .container .time-display {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    transform: translateY(50px);
+    color: #fff;
+    font-size: 50px; }
   .container .player-container {
     height: 70vh;
     position: relative;
     align-items: center;
     justify-content: center;
-    transition: 0.5s ease; }
-    .container .player-container .play-div {
-      display: flex;
-      justify-content: center;
-      align-items: center; }
-      .container .player-container .play-div .play {
-        position: relative;
-        top: 30vh;
-        width: 75px; }
+    transition: 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .container .player-container .play {
+      width: 75px; }
     .container .player-container svg {
       position: absolute;
       height: 50%;
@@ -185,13 +158,11 @@ main {
       transform: translate(-50%, -50%) rotate(-90deg);
       /*to start the animation made on js up*/
       pointer-events: none; }
-    .container .player-container .time-display {
-      text-align: center;
-      color: #fff;
-      font-size: 50px; }
   .container .sound-picker {
-    display: flex;
-    justify-content: space-evenly; }
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: space-between;
+    height: 150px; }
     .container .sound-picker button {
       color: #fff;
       background-color: rgba(0, 0, 0, 0.6);
@@ -203,13 +174,15 @@ main {
       border-radius: 5px;
       font-size: 20px;
       transition: all 0.5s ease;
+      margin: auto;
       border: none;
       height: 100px;
       width: 100px;
       border-radius: 50%;
-      padding: 25px; }
+      padding: 25px;
+      transition: all 0.5s ease; }
       .container .sound-picker button:hover {
-        animation: shake 0.5s; }
+        transform: scale(1.2); }
       .container .sound-picker button img, .container .sound-picker button svg {
         height: 100%;
         display: flex;
@@ -367,19 +340,6 @@ main {
   100% {
     margin-top: -500px; } }
 
-@media screen and (max-width: 768px) {
-  .wrapper header .logo {
-    width: 5rem;
-    height: 5rem;
-    margin-left: 5px; }
-  .wrapper button, .wrapper a {
-    height: 2rem;
-    width: 5rem; }
-  .wrapper a {
-    width: 8rem; }
-  main h2 {
-    font-size: 20px; } }
-
 @media screen and (max-width: 500px) {
   .bg-modal .modal-content {
     width: 350px;
@@ -412,14 +372,10 @@ main {
   .container .player-container {
     height: 50vh;
     position: relative; }
-    .container .player-container .play-div .play {
-      position: relative;
-      top: 20vh;
-      width: 50px; }
-    .container .player-container .time-display {
-      margin-top: 0;
-      font-size: 25px;
-      margin-top: -20px; }
+    .container .player-container .play {
+      width: 40px; }
+  .container .time-display {
+    font-size: 15px; }
   .container .sound-picker button {
     height: 60px;
     width: 60px;

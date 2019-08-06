@@ -10,29 +10,6 @@
 
 // Tablets & Small Laptops
 @include mediaMd {
-    //Index.html
-
-    .wrapper {
-        header {
-            .logo{
-                width: 5rem;
-                height: 5rem;
-                margin-left: 5px;
-            }
-        }
-        button, a{
-            height: 2rem;
-            width: 5rem;
-        }
-        a{
-            width: 8rem;
-        }
-    }
-    main {
-        h2 {
-            font-size: 20px;
-        }
-    }
 }
 
 // Smartphones
@@ -90,19 +67,13 @@
             height: 50vh;
             position: relative;
     
-            .play-div{
-                .play{
-                    position: relative;
-                    top: 20vh;
-                    width: 50px;
-                }
+            .play{
+                width:40px;
             }
-    
-            .time-display{
-                margin-top: 0;
-                font-size: 25px;
-                margin-top: -20px;
-            }
+        }
+
+        .time-display{
+            font-size: 15px;
         }
     
         .sound-picker{

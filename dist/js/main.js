@@ -32,7 +32,7 @@ if (location.href.includes('index.html')) {
         const sounds = document.querySelectorAll('.sound-picker button'); // buttons within the sound picker div
         // Time Display
         const timeSelect = document.querySelector('.time-select'); // get the div of the timer buttons do display none when playing
-        const timeDisplay = document.querySelector('.time-display'); // time display <h3>
+        const timeDisplay = document.querySelector('.time-display h3'); // time display <h3>
         const timeSelectBtn = document.querySelectorAll('.time-select button'); // buttons within time select
 
         // Stop button

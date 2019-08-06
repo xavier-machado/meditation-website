@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="animated fadeInRight">
 
 <head>
     <meta charset="UTF-8">
@@ -8,6 +8,7 @@
     <!-- Fonts -->
     <!-- CSS Link -->
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animate.css">
     <!-- Icon -->
     <link rel="icon" href="https://i.postimg.cc/QMk1F80d/page-icon.png">
     <title>Meditation</title>
@@ -24,22 +25,22 @@
             <button data-time="1200">20 Minutes</button>
             <button id="last">Choose time</button>
         </div>
+        <div class="time-display">
+            <h3>0:00</h3>
+        </div>
         <div class="player-container">
             <audio class="song">
                 <source src="./sounds/beach.mp3">
             </audio>
-            <div class="play-div">
-                <img src="./svg/play.svg" alt="play" class="play">
-            </div>
+            <img src="./svg/play.svg" alt="play" class="play">
             <svg class="track-outline" width="453" height="453" viewBox="0 0 453 453" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
-                <circle cx="226.5" cy="226.5" r="216.5" stroke="black" stroke-width="20"/>
+                <circle cx="226.5" cy="226.5" r="216.5" stroke="black" stroke-width="20" />
             </svg>
             <svg class="moving-outline" width="453" height="453" viewBox="0 0 453 453" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
-                <circle cx="226.5" cy="226.5" r="216.5" stroke="#9932CC" stroke-width="20"/>
+                <circle cx="226.5" cy="226.5" r="216.5" stroke="#9932CC" stroke-width="20" />
             </svg>
-            <h3 class="time-display">0:00</h3>
         </div>
         <div class="sound-picker">
             <button data-sound="./sounds/beach.mp3" data-video="https://i.postimg.cc/sgTVnb6g/beach.png">
@@ -54,7 +55,8 @@
             <button data-sound="./sounds/nature.mp3" data-video="https://i.postimg.cc/TY8qw4c1/nature-background.jpg">
                 <img src="./img/nature-icon.png" alt="sunset">
             </button>
-            <button data-sound="./sounds/campfire.mp3" data-video="https://i.postimg.cc/fLmQhPKX/campfire-background.jpg">
+            <button data-sound="./sounds/campfire.mp3"
+                data-video="https://i.postimg.cc/fLmQhPKX/campfire-background.jpg">
                 <img src="./img/campfire-icon.png" alt="sunset">
             </button>
         </div>

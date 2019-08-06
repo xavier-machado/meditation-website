@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 body {
@@ -18,11 +19,11 @@ a{
 // Index.html
 
 .bg-image{
-    position: absolute; /* because it's going to go over the showcase section */
+    position: absolute;
     @include backgroundConfig('../img/background.jpg');
     /* The image doesn't appear until we size it */
     width: 100%;
-    height: 100vh; /* Making sure is the same as the parent */
+    height: 100vh;
     z-index: -1;
     opacity: 0.9;
 
@@ -45,7 +46,7 @@ a{
         }
 
         .header-buttons{
-            width: 100vw;
+            width: 100%;
             @include flexCentering;
         }
     }
@@ -73,7 +74,7 @@ a{
     button {
         margin: 20rem;
         height: 4rem;
-        width: 12rem;
+        width: 15rem;
         font-size: 25px;
     }
 
@@ -142,21 +143,27 @@ main {
         }
     }
 
+    .time-display{
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        transform: translateY(50px);
+        color: #fff;
+        font-size: 50px;
+    }
+
     .player-container{
         height: 70vh;
         position: relative;
         align-items: center;
         justify-content: center;
         transition: 0.5s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-        .play-div{
-            @include flexCentering;
-
-            .play{
-                position: relative;
-                top: 30vh;
-                width: 75px;
-            }
+        .play{
+            width: 75px;
         }
 
         svg{
@@ -167,27 +174,25 @@ main {
             transform: translate(-50%,-50%) rotate(-90deg);/*to start the animation made on js up*/
             pointer-events: none;
         }
-
-        .time-display{
-            text-align: center;
-            color: #fff;
-            font-size: 50px
-        }
     }
 
     .sound-picker{
-        display: flex;
-        justify-content: space-evenly;
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        justify-content: space-between;
+        height: 150px;
 
         button{
             @include meditButtonStyle;
+            margin: auto;
             border: none;
             height: 100px;
             width: 100px;
             border-radius: 50%;
             padding: 25px;
+            transition: all 0.5s ease;
             &:hover{
-                animation: shake 0.5s;
+                transform: scale(1.2);
             }
 
             img,svg{
