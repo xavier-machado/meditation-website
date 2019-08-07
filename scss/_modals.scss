@@ -29,18 +29,17 @@
            transform: rotate(45deg);
            cursor: pointer;
        }
-
         .modal-image {
             width: 100px;
         }
 
         li{
-            padding: 5px;
-            list-style: lower-roman;
+            padding: 4px;
         }
 
         ul{
-            margin-top: 30px;
+            font-size: 15px;
+            margin-top: 10px;
         }
     }
  }
@@ -70,7 +69,7 @@
         align-items: center;
         flex-direction: column;
         position: relative;
-
+        animation: zoomIn .5s forwards;
         form{
             display: grid;
             grid-gap: 20px;

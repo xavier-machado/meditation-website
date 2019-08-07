@@ -10,6 +10,61 @@
 
 // Tablets & Small Laptops
 @include mediaMd {
+// Index.html
+
+.wrapper {
+
+    header {
+        .header-buttons{
+            width: 100vw;
+            display: grid;
+            justify-content: space-evenly;
+            grid-template-columns: repeat(3,1fr);
+        }
+    }
+
+    button {
+        margin: auto;
+        height: 2rem;
+        width: 7rem;
+        font-size: 18px;
+        margin-top: 2rem;
+    }
+
+    img {
+        margin: auto;
+        width: 50px;
+        margin-top: 30px;
+    }
+
+    a{
+        width: 10rem;
+        height: 2rem;
+        font-size: 15px;
+        border-radius: 10px;
+    }
+}
+
+main {
+    height: 100vh;
+    @include flexCentering;
+    flex-direction: column;
+
+    a {
+        text-align: center;
+    }
+
+    h2 {
+        width: 70%;
+        text-shadow: -3px 3px 5px rgba(12,4,11,0.96);
+        font-size: 30px;
+        font-family: 'Blinker', sans-serif;
+        padding: 20px;
+        border-radius: 20px;
+        color: #fff;
+        text-align: center;
+    }
+}
 }
 
 // Smartphones
@@ -27,16 +82,16 @@
             .modal-image {
                 width: 50px;
             }
+
+            ul{
+                margin-top: 30px;
+            }
     
             li{
                 padding: 5px;
                 font-size: 12px;
                 line-height: 0.7;
                 list-style: lower-roman;
-            }
-    
-            ul{
-                margin-top: 30px;
             }
         }
      }

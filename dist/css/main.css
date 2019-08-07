@@ -34,17 +34,12 @@ a {
   display: flex;
   height: 15vh;
   width: 100%; }
-  .wrapper header .logo {
-    margin-top: 10px;
-    margin-left: 30px;
-    padding: 10px;
-    width: 7rem;
-    height: 7rem; }
   .wrapper header .header-buttons {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
+    width: 100vw;
+    height: 30vh;
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: repeat(3, 1fr); }
 
 .wrapper button, .wrapper a {
   margin: 10px;
@@ -66,13 +61,16 @@ a {
     border: 2px #000 solid; }
 
 .wrapper button {
-  margin: 20rem;
+  margin: auto;
   height: 4rem;
   width: 15rem;
-  font-size: 25px; }
+  font-size: 25px;
+  margin-top: 2rem; }
 
 .wrapper img {
-  width: 100px; }
+  margin: auto;
+  width: 100px;
+  margin-top: 30px; }
 
 .wrapper a {
   width: 15rem;
@@ -254,10 +252,10 @@ main {
     .bg-modal .modal-content .modal-image {
       width: 100px; }
     .bg-modal .modal-content li {
-      padding: 5px;
-      list-style: lower-roman; }
+      padding: 4px; }
     .bg-modal .modal-content ul {
-      margin-top: 30px; }
+      font-size: 15px;
+      margin-top: 10px; }
 
 .modal-pick-time {
   top: 0;
@@ -284,7 +282,8 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    position: relative; }
+    position: relative;
+    animation: zoomIn .5s forwards; }
     .modal-pick-time .pick-time form {
       display: grid;
       grid-gap: 20px; }
@@ -340,6 +339,45 @@ main {
   100% {
     margin-top: -500px; } }
 
+@media screen and (max-width: 768px) {
+  .wrapper header .header-buttons {
+    width: 100vw;
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: repeat(3, 1fr); }
+  .wrapper button {
+    margin: auto;
+    height: 2rem;
+    width: 7rem;
+    font-size: 18px;
+    margin-top: 2rem; }
+  .wrapper img {
+    margin: auto;
+    width: 50px;
+    margin-top: 30px; }
+  .wrapper a {
+    width: 10rem;
+    height: 2rem;
+    font-size: 15px;
+    border-radius: 10px; }
+  main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    main a {
+      text-align: center; }
+    main h2 {
+      width: 70%;
+      text-shadow: -3px 3px 5px rgba(12, 4, 11, 0.96);
+      font-size: 30px;
+      font-family: 'Blinker', sans-serif;
+      padding: 20px;
+      border-radius: 20px;
+      color: #fff;
+      text-align: center; } }
+
 @media screen and (max-width: 500px) {
   .bg-modal .modal-content {
     width: 350px;
@@ -348,13 +386,13 @@ main {
       font-size: 26px; }
     .bg-modal .modal-content .modal-image {
       width: 50px; }
+    .bg-modal .modal-content ul {
+      margin-top: 30px; }
     .bg-modal .modal-content li {
       padding: 5px;
       font-size: 12px;
       line-height: 0.7;
       list-style: lower-roman; }
-    .bg-modal .modal-content ul {
-      margin-top: 30px; }
   .container .arrow-back {
     height: 50px;
     width: 50px;
