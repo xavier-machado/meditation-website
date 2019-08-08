@@ -7,11 +7,11 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  overflow: hidden; }
+  box-sizing: border-box; }
 
 body {
-  font-family: 'Roboto Slab', sans-serif; }
+  font-family: 'Roboto Slab', sans-serif;
+  overflow: hidden; }
 
 a {
   text-decoration: none;
@@ -107,7 +107,8 @@ main {
     height: 80px;
     width: 80px;
     padding: 10px;
-    transform: rotate(180deg); }
+    transform: rotate(180deg);
+    z-index: 10; }
   .container .time-select {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -211,7 +212,8 @@ main {
       box-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
       display: none;
       cursor: pointer;
-      transition: all 0.5s ease; }
+      transition: all 0.5s ease;
+      z-index: 10; }
       .container .stop-container .stop:hover {
         border: 2px solid #fff; }
 
@@ -250,12 +252,13 @@ main {
       transform: rotate(45deg);
       cursor: pointer; }
     .bg-modal .modal-content .modal-image {
-      width: 100px; }
+      width: 100px;
+      margin: 20px; }
     .bg-modal .modal-content li {
-      padding: 4px; }
+      padding: 4px;
+      list-style: lower-roman; }
     .bg-modal .modal-content ul {
-      font-size: 15px;
-      margin-top: 10px; }
+      font-size: 15px; }
 
 .modal-pick-time {
   top: 0;
@@ -340,59 +343,20 @@ main {
     margin-top: -500px; } }
 
 @media screen and (max-width: 768px) {
-  .wrapper header .header-buttons {
-    width: 100vw;
-    display: grid;
-    justify-content: space-evenly;
-    grid-template-columns: repeat(3, 1fr); }
   .wrapper button {
-    margin: auto;
     height: 2rem;
     width: 7rem;
-    font-size: 18px;
-    margin-top: 2rem; }
+    font-size: 18px; }
   .wrapper img {
-    margin: auto;
-    width: 50px;
-    margin-top: 30px; }
+    width: 50px; }
   .wrapper a {
     width: 10rem;
     height: 2rem;
-    font-size: 15px;
-    border-radius: 10px; }
-  main {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; }
-    main a {
-      text-align: center; }
-    main h2 {
-      width: 70%;
-      text-shadow: -3px 3px 5px rgba(12, 4, 11, 0.96);
-      font-size: 30px;
-      font-family: 'Blinker', sans-serif;
-      padding: 20px;
-      border-radius: 20px;
-      color: #fff;
-      text-align: center; } }
+    font-size: 15px; }
+  main h2 {
+    font-size: 30px; } }
 
 @media screen and (max-width: 500px) {
-  .bg-modal .modal-content {
-    width: 350px;
-    height: 300px; }
-    .bg-modal .modal-content .close {
-      font-size: 26px; }
-    .bg-modal .modal-content .modal-image {
-      width: 50px; }
-    .bg-modal .modal-content ul {
-      margin-top: 30px; }
-    .bg-modal .modal-content li {
-      padding: 5px;
-      font-size: 12px;
-      line-height: 0.7;
-      list-style: lower-roman; }
   .container .arrow-back {
     height: 50px;
     width: 50px;
@@ -411,30 +375,42 @@ main {
     height: 50vh;
     position: relative; }
     .container .player-container .play {
-      width: 40px; }
+      width: 50px; }
   .container .time-display {
-    font-size: 15px; }
+    font-size: 20px; }
   .container .sound-picker button {
     height: 60px;
     width: 60px;
     padding: 10px; }
-  .container .stop-container .stop {
-    margin-top: -20px;
-    height: 50px;
-    width: 230px;
-    font-size: 20px; }
+  .container .stop-container {
+    height: 100px; }
+    .container .stop-container .stop {
+      height: 50px;
+      width: 230px;
+      font-size: 20px; }
+  .bg-modal .modal-content {
+    width: 400px;
+    height: 300px; }
+    .bg-modal .modal-content .close {
+      font-size: 30px; }
+    .bg-modal .modal-content .modal-image {
+      width: 50px; }
+    .bg-modal .modal-content li {
+      padding: 4px;
+      list-style: lower-roman; }
+    .bg-modal .modal-content ul {
+      font-size: 12px;
+      line-height: 0.9; }
   .no-time .warning-no-time {
     width: 150px;
     padding: 15px;
     font-size: 10px; }
   .modal-pick-time .pick-time {
-    width: 350px;
-    height: 200px; }
+    width: 300px;
+    height: 150px;
+    font-size: 12px; }
     .modal-pick-time .pick-time input[type=number] {
-      padding: 10px;
-      border: 1px solid #fff;
-      background: #000;
-      color: #fff;
-      outline: none;
-      font-weight: bold;
-      transition: 0.5 ease; } }
+      padding: 5px; }
+    .modal-pick-time .pick-time button {
+      height: 20px;
+      width: 70px; } }

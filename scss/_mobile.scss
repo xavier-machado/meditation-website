@@ -14,87 +14,32 @@
 
 .wrapper {
 
-    header {
-        .header-buttons{
-            width: 100vw;
-            display: grid;
-            justify-content: space-evenly;
-            grid-template-columns: repeat(3,1fr);
-        }
-    }
-
     button {
-        margin: auto;
         height: 2rem;
         width: 7rem;
         font-size: 18px;
-        margin-top: 2rem;
     }
 
     img {
-        margin: auto;
         width: 50px;
-        margin-top: 30px;
     }
 
     a{
         width: 10rem;
         height: 2rem;
         font-size: 15px;
-        border-radius: 10px;
     }
 }
 
 main {
-    height: 100vh;
-    @include flexCentering;
-    flex-direction: column;
-
-    a {
-        text-align: center;
-    }
-
     h2 {
-        width: 70%;
-        text-shadow: -3px 3px 5px rgba(12,4,11,0.96);
         font-size: 30px;
-        font-family: 'Blinker', sans-serif;
-        padding: 20px;
-        border-radius: 20px;
-        color: #fff;
-        text-align: center;
     }
 }
 }
 
 // Smartphones
 @include mediaSm {
-    // Modal index.html
-    .bg-modal{
-        .modal-content {
-            width: 350px;
-            height: 300px;
-    
-            .close{
-               font-size: 26px;
-           }
-    
-            .modal-image {
-                width: 50px;
-            }
-
-            ul{
-                margin-top: 30px;
-            }
-    
-            li{
-                padding: 5px;
-                font-size: 12px;
-                line-height: 0.7;
-                list-style: lower-roman;
-            }
-        }
-     }
 
      //Meditation.html
      .container {
@@ -123,12 +68,12 @@ main {
             position: relative;
     
             .play{
-                width:40px;
+                width:50px;
             }
         }
 
         .time-display{
-            font-size: 15px;
+            font-size: 20px;
         }
     
         .sound-picker{
@@ -139,9 +84,9 @@ main {
             }
         }
 
-        .stop-container{    
+        .stop-container{
+            height: 100px;
             .stop{
-                margin-top: -20px;
                 height: 50px;
                 width: 230px;
                 font-size: 20px;
@@ -150,7 +95,31 @@ main {
 
     }
 
-    // Modal 
+    // Index Modal
+    .bg-modal{
+        .modal-content {
+            width: 400px;
+            height: 300px;
+            .close{
+               font-size: 30px;
+           }
+            .modal-image {
+                width: 50px;
+            }
+    
+            li{
+                padding: 4px;
+                list-style: lower-roman;
+            }
+    
+            ul{
+                font-size: 12px;
+                line-height: 0.9;
+            }
+        }
+     }
+
+    // Meditation Modal 
     .no-time{
         .warning-no-time{
             width: 150px;
@@ -161,19 +130,21 @@ main {
 
      .modal-pick-time{
         .pick-time{
-            width: 350px;
-            height: 200px;
-    
+            width: 300px;
+            height: 150px;
+            font-size: 12px;
+
             input[type=number]{
-                padding: 10px;
-                border: 1px solid #fff;
-                background: #000;
-                color: #fff;
-                outline: none;
-                font-weight: bold;
-                transition: 0.5 ease;
-    
+                padding: 5px;
+            }
+
+            button{
+                height: 20px;
+                width: 70px;
             }
         }   
+
+
+
     }
 }

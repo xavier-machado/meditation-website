@@ -4,11 +4,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 body {
     font-family: 'Roboto Slab', sans-serif;
+    overflow: hidden;
 }
 
 a{
@@ -121,6 +122,7 @@ main {
         width: 80px;
         padding: 10px;
         transform: rotate(180deg);
+        z-index: 10;
     }
 
     .time-select{
@@ -226,7 +228,7 @@ main {
             display: none;
             cursor: pointer;
             transition: all 0.5s ease;
-
+            z-index: 10;
             &:hover{
                 border: 2px solid #fff;
             }

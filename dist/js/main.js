@@ -26,6 +26,7 @@ if (location.href.includes('index.html')) {
         const play = document.querySelector('.play'); //play button
         const outline = document.querySelector('.moving-outline circle'); // purple svg, circle tag within
         const end = document.getElementById('end'); // audio to end sound
+        const arrowBack = document.querySelector('.arrow-back')
 
         // Sounds
         const soundPicker = document.querySelector('.sound-picker'); // get the div of the sound buttons do display none when playing
@@ -82,14 +83,10 @@ if (location.href.includes('index.html')) {
                 soundPicker.style.display = 'none';
                 timeSelect.style.display = 'none';
                 stop.style.display = 'block';
+                arrowBack.style.display = 'none';
                 var total = duration;
                 countdown = setInterval(() => {
                     duration--;
-                    //we're using the math.floor because the current time will be float numbers
-                    let seconds = Math.floor(duration % 60); // when it gets to 60 , jump back to 0
-                    let minutes = Math.floor(duration / 60);
-                    seconds = beautifySeconds(seconds);
-    
     
                     // Animate the circle
                     console.log(progress);
@@ -97,7 +94,7 @@ if (location.href.includes('index.html')) {
                     outline.style.strokeDashoffset = progress;
     
                     // Animate the text
-                    timeDisplay.textContent = `${minutes}:${seconds}`
+                    timeDisplay.textContent = secondsToHms(duration);
     
                     if (duration <= 0) {
                         clearInterval(countdown);
@@ -110,6 +107,7 @@ if (location.href.includes('index.html')) {
                         soundPicker.style.display = 'flex';
                         timeSelect.style.display = 'flex';
                         stop.style.display = 'none';
+                        arrowBack.style.display = 'flex';
                     }
     
                 }, 1000);
@@ -125,11 +123,22 @@ if (location.href.includes('index.html')) {
             checkPlaying(song)
         })
 
+        // Time fomration
+        function secondsToHms(d) {
+            d = Number(d);
+        
+            var h = Math.floor(d / 3600);
+            var m = Math.floor(d % 3600 / 60);
+            var s = Math.floor(d % 3600 % 60);
+        
+            return ('0' + h).slice(-2) + ":" + ('0' + m).slice(-2) + ":" + ('0' + s).slice(-2);
+        }
+
 
         // Display seconds with double digits
-        const beautifySeconds = (seconds) => {
-            return seconds < 10 ? '0' + seconds : seconds
-        }
+        // const beautifySeconds = (seconds) => {
+        //     return seconds < 10 ? '0' + seconds : seconds
+        // }
 
         //Setting the time that the user choosed
         sendTimePicked.addEventListener('click', () => {
@@ -137,7 +146,7 @@ if (location.href.includes('index.html')) {
             customized = inputValue * 60;
             chooseTimeButton.setAttribute('data-time', customized);
             duration = chooseTimeButton.getAttribute('data-time');
-            formatTime(duration);
+            timeDisplay.textContent = secondsToHms(duration);
             timePickedModal.style.display = 'none';
         })
 
@@ -149,24 +158,16 @@ if (location.href.includes('index.html')) {
                     timePickedModal.style.display = 'flex';
                 } else {
                     duration = this.getAttribute('data-time');
-                    formatTime(duration)
+                    timeDisplay.textContent = secondsToHms(duration);
                 }
             })
         });
-
-        //Format and display minutes and seconds
-        function formatTime(duration) {
-            seconds = Math.floor(duration % 60);
-            minutes = Math.floor(duration / 60);
-            seconds = beautifySeconds(seconds)
-            timeDisplay.textContent = `${minutes}:${seconds}`
-        }
 
         // Stop earlier
         stop.addEventListener('click', () => {
             song.pause();
             clearInterval(countdown);
-            timeDisplay.textContent = '0:00'
+            timeDisplay.textContent = '00:00:00'
             outline.style.strokeDashoffset = outlineLength;
             duration = 0;
             progress = 0;
@@ -175,6 +176,7 @@ if (location.href.includes('index.html')) {
             soundPicker.style.display = 'flex';
             timeSelect.style.display = 'flex';
             stop.style.display = 'none';
+            arrowBack.style.display = 'flex';
         })
 
     };
